@@ -34,7 +34,7 @@ def browser(request):
         browser = webdriver.Chrome(options=opts_chrome)
     elif browser_name == "firefox":
         print(f"\nstart {browser_name} browser for test..")
-        #opts_firefox.add_argument('window-size=1920,1080')
+        # opts_firefox.add_argument('window-size=1920,1080') - для firefox такий рядок синтаксису не працює, див. нижче.
         opts_firefox.add_argument('--width=1920')
         opts_firefox.add_argument('--height=1080')
         browser = webdriver.Firefox(options=opts_firefox)
