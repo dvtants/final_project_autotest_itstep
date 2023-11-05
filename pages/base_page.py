@@ -6,15 +6,23 @@ from selenium.common.exceptions import ElementNotInteractableException
 from selenium.common.exceptions import ElementClickInterceptedException
 from selenium.webdriver.support import expected_conditions as EC
 # from pages.locators import BasePageLocators
-from settings import sets
+from ..settings import sets
 import time
 
 
 class BasePage:
+    """Клас базової сторінки"""
+    """
+    self в Python - це не метод, а спеціальний параметр, який передається першим аргументом у метод класу 
+    і є посиланням на екземпляр класу. Він використовується для доступу до атрибутів та методів екземпляра 
+    з методів класу.
+    """
+
     def __init__(self, browser, url):
+        """Конструктор який викликає браузер"""
         self.browser = browser
         self.url = url
-        self.browser.imlicitly_wait(sets.IMPLICITLY_WAIT)
+        self.browser.implicitly_wait(sets.IMPLICITLY_WAIT)
 
     def explicit_wait(self, value):
         time.sleep(value)
@@ -92,5 +100,3 @@ class BasePage:
 
     def logout_from_cabinet(self):
         pass
-
-
