@@ -1,9 +1,10 @@
 from selenium.webdriver.common.by import By
 
 
-class BasePageLocators:
+class BasePageLocators:  # Локатори елементів, які не змінюються. Все що в хедері і в футері.
     LOGIN_SIGNUP = (By.XPATH,
                     "//div[@class='top_bar_user']/a[@href='user/login']")  # краще все брати: зовнішньо в подвійних лапках, а внутрішні одинарні.
+    DETAILS = (By.XPATH, "//a[text()='Детали сотрудничества']")
     FEEDBACK = (By.XPATH, "//a[text()='Обратная связь']")
     DELIVERY = (By.XPATH, "//a[text()='Доставка']")
     WARRANTY = (By.XPATH, "//a[text()='Гарантия']")
@@ -27,10 +28,15 @@ class BasePageLocators:
     INPUT_SUBSCRIBE = (By.XPATH, "//input[@name='submail']")
     LOGO_FOOTER = (By.XPATH, "//img[@src='images/logo-footer.png']")
 
+
+class MainPageLocators:  # Локатори елементів, які змінюються. Все що є на головній сторінці.
     REFUND = (By.XPATH, "//div[@class='characteristics']//div[text()='Возврат средств']/parent::*/parent::*/parent::")
-    FREE_SHIPPING = (By.XPATH, "//div[@class='characteristics']//div[text()='Бесплатная доставка']/parent::*/parent::*/parent::*")
-    PAYMENT_DELAY = (By.XPATH, "//div[@class='characteristics']//div[text()='Отсрочка оплаты']/parent::*/parent::*/parent::*")
-    TECHNICAL_SUPPORT = (By.XPATH, "//div[@class='characteristics']//div[text()='Тех.поддержка']/parent::*/parent::*/parent::*")
+    FREE_SHIPPING = (
+        By.XPATH, "//div[@class='characteristics']//div[text()='Бесплатная доставка']/parent::*/parent::*/parent::*")
+    PAYMENT_DELAY = (
+        By.XPATH, "//div[@class='characteristics']//div[text()='Отсрочка оплаты']/parent::*/parent::*/parent::*")
+    TECHNICAL_SUPPORT = (
+        By.XPATH, "//div[@class='characteristics']//div[text()='Тех.поддержка']/parent::*/parent::*/parent::*")
     NEW_ARRIVALS_SHOW_ALL = (By.XPATH, "//div[@class='arrivals_nav_container']/a[@class='view-all']")
     NEW_ARRIVALS_LEFT = (By.XPATH, "//div[@class='arrivals_nav arrivals_prev']/i[@class='fas fa-chevron-left']")
     NEW_ARRIVALS_RIGHT = (By.XPATH, "//div[@class='arrivals_nav arrivals_next']/i[@class='fas fa-chevron-right']")
@@ -49,8 +55,6 @@ class BasePageLocators:
     TRENDS_2023_NEXT = (By.XPATH, "//div[@class='trends_next trends_nav slick-arrow']")
     TRENDS_2023_HOCO_ES20_PLUS_AIRPODS2_BLUETOOTH_WHITE = (By.XPATH,
                                                            "//div[@data-slick-index='7']//a[text()='Наушники HOCO ES20 PLUS AirPods2 Bluetooth/ White']/parent::*/parent::*/parent::*/parent::*/parent::*")
-
-
 
 # # //div[@class="characteristics"]//div[text()="Возврат средств"]
 # # //div[text()="Возврат средств"]/parent::*/parent::*/parent::*
