@@ -14,23 +14,31 @@ class BasePageLocators:  # Локатори елементів, які не зм
     CURRENCY_USD = (By.XPATH, "//option[text()='USD']")
     CURRENCY_EUR = (By.XPATH, "//option[text()='EUR']")
     LOGO = (By.XPATH, "//img[@src='images/logo.png']")
-    SEARCH = (By.XPATH, "//input[@class='header_search_input tt-input']")
-    BUTTON_SUBMIT = (By.XPATH, "//button[@class='header_search_button trans_300']")
-    WISH_SHOW = (By.XPATH, "//img[@src='images/heart.png']")
-    CART_SHOW = (By.XPATH, "//img[@src='images/cart.png']")
-    SHOW_NEW = (By.XPATH, "//span[text()='Новинки']")
-    SHOW_SALE = (By.XPATH, "//span[text()='Скидки']")
-    SHOW_HIT = (By.XPATH, "//span[text()='Хиты']")
-    SAMSUNG_CAT = (By.XPATH, "//div[text()='Samsung']")
-    SAMSUNG_J701 = (By.XPATH,
-                    "//a[text()='Samsung J701']")  # В консолі Chrome робимо заморозку: setTimeout(function(){debugger;}, 5000) - на 5 сек.
-    SUBSCRIBE = (By.XPATH, "//button[text()='Подписаться!']")  # //button[@class="newsletter_button"]
+    SEARCH_INPUT = (By.XPATH, "//input[@class='header_search_input tt-input']")
+    SEARCH_BUTTON = (By.XPATH, "//button[@class='header_search_button trans_300']")
+    WISH_BUTTON = (By.XPATH, "//img[@src='images/heart.png']")  # WISH_BUTTON = (By.XPATH, '//a[@href="wish/show"]')
+    CART_BUTTON = (By.XPATH, "//img[@src='images/cart.png']")  # CART_BUTTON = (By.XPATH, '//a[@href="cart/show"]')
+    HITY = (By.XPATH, "//span[text()='Хиты']")
+    SKIDKI = (By.XPATH, "//span[text()='Скидки']")
+    NOVINKI = (By.XPATH, "//span[text()='Новинки']")
+    HEAD_CAT_SAMSUNG = (By.XPATH,
+                        "//div[text()='Samsung']")  # HEAD_CAT_SAMSUNG = (By.XPATH, "//div[@class='search-by-level-1' and text()='Samsung']")
+    SUBCATEGORY_SAMSUNG_HEADER = (By.XPATH,
+                                  "//a[text()='Samsung J701']")  # В консолі Chrome робимо заморозку: setTimeout(function(){debugger;}, 5000) - на 5 сек.
+    SUBSCRIBE = (By.XPATH,
+                 "//button[text()='Подписаться!']")  # //button[@class="newsletter_button"] # SUBSCRIBE = (By.XPATH, "//button[text() = 'Подписаться!']")
     INPUT_SUBSCRIBE = (By.XPATH, "//input[@name='submail']")
     LOGO_FOOTER = (By.XPATH, "//img[@src='images/logo-footer.png']")
+    ALERT_SUCCESS = (By.XPATH,
+                     "//div[@id = 'alert-success']")  # Локатор меню що спливає після підписання на розсилку. Ви успішно підписалися.
+    ALERT_ERROR = (By.XPATH, "//div[@id = 'alert-error']")  # Негативне повідомлення
 
 
 class MainPageLocators:  # Локатори елементів, які змінюються. Все що є на головній сторінці.
-    REFUND = (By.XPATH, "//div[@class='characteristics']//div[text()='Возврат средств']/parent::*/parent::*/parent::")
+    MAIN_SLIDER = (By.XPATH, "//div[@class = 'screen_slider']")
+    CAT_ZARYADKI = (By.XPATH, "//a[@href='category/zaryadki']")
+    MAIN_SUBCAT = (By.XPATH, "//a[@href='category/Besprovodnye-BZU']")
+    REFUND = (By.XPATH, "//div[@class='characteristics']//div[text()='Возврат средств']/parent::*/parent::*/parent::*")
     FREE_SHIPPING = (
         By.XPATH, "//div[@class='characteristics']//div[text()='Бесплатная доставка']/parent::*/parent::*/parent::*")
     PAYMENT_DELAY = (
@@ -86,3 +94,4 @@ class MainPageLocators:  # Локатори елементів, які змін�
 # //div[@class="trends_next trends_nav slick-arrow"]
 #
 # //div[@data-slick-index="7"]//a[text()="Наушники HOCO ES20 PLUS AirPods2 Bluetooth/ White"]/parent::*/parent::*/parent::*/parent::*/parent::*
+# //div[@class="trends_slider_container"]//div[@data-slick-index="7"]
