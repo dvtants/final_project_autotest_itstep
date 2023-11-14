@@ -30,6 +30,17 @@ class BasePage:
     def open(self):
         self.browser.get(self.url)
 
+    def refresh(self):
+        self.browser.refresh()
+
+    def scroll_page(self):
+        # self.browser.execute_script("window.scrollTo(0,document.body.scrollHeight)")
+        y = 500
+        for timer in range(0, 50):
+            self.browser.execute_script("window.scrollTo(0, " + str(y) + ")")
+            y += 500
+            time.sleep(1)
+
     def is_element_present(self, how, what):
         try:
             self.browser.find_element(how, what)

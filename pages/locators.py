@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 class BasePageLocators:  # Локатори елементів, які не змінюються. Все що в хедері і в футері.
     LOGIN_SIGNUP = (By.XPATH,
                     "//div[@class='top_bar_user']/a[@href='user/login']")  # краще все брати: зовнішньо в подвійних лапках, а внутрішні одинарні.
+    LOGOUT = (By.XPATH, "//div[@class='top_bar_user']//a[@href = 'user/logout']")
     DETAILS = (By.XPATH, "//a[text()='Детали сотрудничества']")
     FEEDBACK = (By.XPATH, "//a[text()='Обратная связь']")
     DELIVERY = (By.XPATH, "//a[text()='Доставка']")
@@ -63,6 +64,62 @@ class MainPageLocators:  # Локатори елементів, які змін�
     TRENDS_2023_NEXT = (By.XPATH, "//div[@class='trends_next trends_nav slick-arrow']")
     TRENDS_2023_HOCO_ES20_PLUS_AIRPODS2_BLUETOOTH_WHITE = (By.XPATH,
                                                            "//div[@data-slick-index='7']//a[text()='Наушники HOCO ES20 PLUS AirPods2 Bluetooth/ White']/parent::*/parent::*/parent::*/parent::*/parent::*")
+
+
+class SignupLoginPageLocators:
+    GO_TO_SIGNUP = (By.XPATH, "//a[@href = 'user/signup']")
+    H1_SIGNUP = (By.XPATH, "//h1[text() = 'Регистрация']")
+    INPUT_EMAIL = (By.XPATH, "//input[@name = 'email']")
+    INPUT_PASSWORD = (By.XPATH, "//input[@name = 'password']")
+    BUTTON_SIGNUP = (By.XPATH, "//button[text() = 'Зарегистрироваться']")
+    H1_VHOD = (By.XPATH, "//h1[text() = 'Вход']")
+    BUTTON_LOGIN = (By.XPATH, "//button[text() = 'Войти']")
+
+
+class OrderPageLocators:
+    FIRST_PRODUCT = (By.XPATH, "//div[@class = 'new_arrivals']//div[@class = 'slick-list draggable']/div/div[1]/div[1]")
+    BUTTON_ADD_FIRST_PRODUCT = (By.XPATH,
+                                "//div[@class = 'new_arrivals']//div[@class = 'slick-list draggable']/div/div[1]/div[1]//button[text() = 'В корзину!']")
+    PRICE_FIRST_PRODUCT = (By.XPATH,
+                           "//div[@class = 'new_arrivals']//div[@class = 'slick-list draggable']/div/div[1]/div[1]//div[@class = 'product_price']")
+    BTN_CONTINUE_SHOP_POPUP = (By.XPATH, "//button[text() = 'Продолжить покупки']")
+    SECOND_PRODUCT_INPUT_NUMBER_QTY = (
+        By.XPATH, "//div[@class = 'shop_content']//div[@id = 'product']/div[1]//input[@type = 'number']")
+    PRICE_SECOND_PRODUCT = (
+        By.XPATH, "//div[@class = 'shop_content']//div[@id = 'product']/div[1]//div[@class = 'product_price']")
+    BUTTON_ADD_SECOND_PRODUCT = (By.XPATH, "//div[@class = 'shop_content']//div[@id = 'product']/div[1]//button")
+    TOTAL_PRICE = (By.XPATH, "//tr[@class = 'cart-cena']/td[2]")
+    QTY = (By.XPATH, "//tr[@class = 'cart-itogo']/td[2]")
+    CHECKOUT_BTN_POPUP = (By.XPATH, "//a[@href = 'cart/view']")
+    CART_REG_FORM = (By.XPATH, "//div[@class = 'cart-reg']")
+    INPUT_EMAIL = (By.XPATH, "//input[@name = 'email']")
+    INPUT_PASSWORD = (By.XPATH, "//input[@name = 'password']")
+    INPUT_NOTE = (By.XPATH, "//textarea[@name= 'note']")
+    CHECKOUT_BUTTON = (By.XPATH, "//button[@class = 'btn green']")
+
+
+# class SignupLoginPageLocators:
+#     pass
+#
+#
+# class OrderPageLocators:
+#     pass
+
+
+class CabinetPageLocators:
+    pass
+
+
+class CategoryPageLocators:
+    pass
+
+
+class SearchPageLocators:
+    pass
+
+
+class ProductPageLocators:
+    pass
 
 # # //div[@class="characteristics"]//div[text()="Возврат средств"]
 # # //div[text()="Возврат средств"]/parent::*/parent::*/parent::*
